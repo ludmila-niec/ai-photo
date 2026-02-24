@@ -43,68 +43,70 @@ export function Navbar() {
               Tips for Best Results
             </DialogTitle>
           </DialogHeader>
-
-          {/* Do's section */}
-          <div className="space-y-3 mb-6">
-            <div className="flex items-center gap-3">
-              <div className="size-8 rounded-full flex items-center justify-center shrink-0">
-                <CircleCheck className="size-5 text-primary" />
+          <div className="no-scrollbar overflow-y-auto max-h-[calc(100vh-100px)]">
+            {/* Do's section */}
+            <div className="space-y-3 mb-6">
+              <div className="flex items-center gap-3">
+                <div className="size-8 rounded-full flex items-center justify-center shrink-0">
+                  <CircleCheck className="size-5 text-primary" />
+                </div>
+                <span className="text-lg font-semibold">Do&apos;s</span>
               </div>
-              <span className="text-lg font-semibold">Do&apos;s</span>
+              <ul className="space-y-2 md:text-sm text-xs text-foreground">
+                <li className="flex items-start gap-2">
+                  <span>Use high-resolution scans of photos</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span>Ensure good lighting when scanning</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span>Upload images with clear subjects</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span>Keep file sizes under 10MB</span>
+                </li>
+              </ul>
             </div>
-            <ul className="space-y-2 text-sm text-foreground indent-10">
-              <li className="flex items-start gap-2">
-                <span>Use high-resolution scans of photos</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span>Ensure good lighting when scanning</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span>Upload images with clear subjects</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span>Keep file sizes under 10MB</span>
-              </li>
-            </ul>
-          </div>
 
-          {/* Don'ts section */}
-          <div className="space-y-3 mb-6">
-            <div className="flex items-center gap-3">
-              <div className="size-8 rounded-full flex items-center justify-center shrink-0">
-                <CircleX className="size-5 text-primary" />
+            {/* Don'ts section */}
+            <div className="space-y-3 mb-6">
+              <div className="flex items-center gap-3">
+                <div className="size-8 rounded-full flex items-center justify-center shrink-0">
+                  <CircleX className="size-5 text-primary" />
+                </div>
+                <span className="text-lg font-semibold">Don&apos;ts</span>
               </div>
-              <span className="text-lg font-semibold">Don&apos;ts</span>
+              <ul className="space-y-2 md:text-sm text-xs text-foreground">
+                <li className="flex items-start gap-2">
+                  <span>Don&apos;t upload heavily compressed images</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span>Don&apos;t use photos that are too blurry</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span>Don&apos;t expect miracles from very damaged photos</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span>Don&apos;t upload screenshots or digital photos</span>
+                </li>
+              </ul>
             </div>
-            <ul className="space-y-2 text-sm text-foreground indent-10">
-              <li className="flex items-start gap-2">
-                <span>Don&apos;t upload heavily compressed images</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span>Don&apos;t use photos that are too blurry</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span>Don&apos;t expect miracles from very damaged photos</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span>Don&apos;t upload screenshots or digital photos</span>
-              </li>
-            </ul>
+
+
+
+
+            {/* Rights notice */}
+            <div className="border-extract p-6">
+              <p className="md:text-sm text-xs">
+                <span className="font-bold font-arvo block mb-2">Important: </span>
+                <span className="md:text-sm text-xs">
+                  Only upload images you own or have permission to use. Do not upload photos that infringe on copyright or the rights of public figures. By uploading, you confirm you hold the necessary rights to the image.
+                </span>
+              </p>
+            </div>
           </div>
-
-
-
-          {/* Rights notice */}
-          <div className="border-extract p-6">
-            <p className="text-sm">
-              <span className="font-bold font-arvo block mb-2">Important: </span>
-              <span className="text-sm">
-                Only upload images you own or have permission to use. Do not upload photos that infringe on copyright or the rights of public figures. By uploading, you confirm you hold the necessary rights to the image.
-              </span>
-            </p>
-          </div>
-        </DialogContent>
-      </Dialog>
+        </DialogContent >
+      </Dialog >
     </>
   );
 }
