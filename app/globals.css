@@ -128,6 +128,75 @@
   }
 }
 
+@keyframes blob-translation {
+  0% {
+    transform: translate(0, 0) scale(1)
+  }
+
+  33% {
+    transform: translate(20px, -20px) scale(1.1)
+  }
+
+  66% {
+    transform: translate(-2px, 10px) scale(0.9)
+  }
+
+  100% {
+    transform: translate(0, 0) scale(1)
+  }
+}
+
+@keyframes sparkle-shoot {
+  0% {
+    transform: translateY(18px) scale(0.2);
+    opacity: 0;
+  }
+
+  20% {
+    transform: translateY(8px) scale(0.55);
+    opacity: 0;
+  }
+
+  45% {
+    transform: translateY(0px) scale(1);
+    opacity: 1;
+  }
+
+  75% {
+    transform: translateY(-20px) scale(0.75);
+    opacity: 0.4;
+  }
+
+  100% {
+    transform: translateY(-40px) scale(0.1);
+    opacity: 0;
+  }
+}
+
+@keyframes spinnerFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes spinnerFadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
 .border-dashed-translation {
   background-image:
     repeating-linear-gradient(90deg, var(--primary) 0, var(--primary) 2px, transparent 2px, transparent 4px),
@@ -155,6 +224,22 @@
   background-size: 20px 20px;
 }
 
+.blob-translation {
+  animation-name: blob-translation;
+  animation-duration: 6s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.sparkle-shoot {
+  animation-name: sparkle-shoot;
+  animation-duration: 2.2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -162,5 +247,23 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+
+  .animation-delay-1200 {
+    animation-delay: 1200ms;
+  }
+
+  .animation-delay-4000 {
+    animation-delay: 4000ms;
+  }
+
+  .animation-delay-8000 {
+    animation-delay: 8000ms;
   }
 }

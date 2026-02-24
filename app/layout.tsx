@@ -48,7 +48,7 @@ export default function RootLayout({
   };
   return (
     <html lang="en">
-      <body className={`${cutiveMono.variable} ${arvo.variable} font-[family-name:var(--font-cutive-mono)] font-[family-name:var(--font-arvo)] antialiased before:content-[''] before:fixed before:inset-0 before:w-full before:h-full before:bg-[#8C8C8C] before:opacity-20 before:filter-[url(#noiseFilter)]`}>
+      <body className={`${cutiveMono.variable} ${arvo.variable} font-[family-name:var(--font-cutive-mono)] font-[family-name:var(--font-arvo)] antialiased before:content-[''] before:fixed before:inset-0 before:w-full before:h-full before:bg-[#8C8C8C] before:opacity-30 before:filter-[url(#noiseFilter)]`}>
         <NoiseTexture />
         {children}
       </body>
