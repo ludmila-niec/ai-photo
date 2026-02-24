@@ -165,8 +165,8 @@ export function PhotoRestorer() {
       <div className="fixed inset-0 flex items-center justify-center px-4">
         <div className="space-y-6 w-full max-w-lg">
           <div className="flex flex-col items-center gap-4">
-            <div className="size-16 rounded-full border border-primary flex items-center justify-center check-animation ">
-              <CircleX className="size-8 text-primary opacity-0 check-animation animation-delay-600" />
+            <div className="size-16 rounded-full border border-primary flex items-center justify-center shake-animation">
+              <CircleX className="size-8 text-primary animation-delay-600" />
             </div>
             <h2 className="text-xl font-bold  font-arvo">Something Went Wrong</h2>
             <p className="text-md text-center">
