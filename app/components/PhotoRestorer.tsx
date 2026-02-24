@@ -7,6 +7,7 @@ import { ProcessingSpinner } from "./ProcessingSpinner";
 import { CompareView } from "./CompareView";
 import { DownloadButton } from "./DownloadButton";
 import { ShareButton } from "./ShareButton";
+import { Button } from "@/components/ui/button";
 import { restorePhoto } from "@/app/actions/restore";
 import type { Preset, AppState, RestoreResponse } from "@/lib/types";
 import Image from "next/image";
@@ -201,7 +202,7 @@ export function PhotoRestorer() {
         </p>
       </div>
       {state.selectedFile && state.originalUrl ? (
-        <div className="bg-card border border-dashed border-border rounded-2xl p-[25px] flex flex-col gap-6">
+        <div className="border border-dashed border-border rounded-2xl p-[25px] flex flex-col gap-6 z-10 relative">
           <Image
             src={state.originalUrl}
             alt="Selected photo"
@@ -210,25 +211,28 @@ export function PhotoRestorer() {
             className="w-full h-auto rounded-xl"
             unoptimized
           />
-          <button
+          <Button
             type="button"
             onClick={clearFile}
-            className="bg-background border border-border rounded-[10px] px-3 h-8 text-sm font-medium text-foreground self-center hover:bg-muted transition-colors cursor-pointer"
+            variant="outline"
+            size="xs"
+            className="self-center"
           >
             Change Photo
-          </button>
+          </Button>
           <PresetSelector
             value={state.preset}
             onChange={setPreset}
             disabled={isProcessing}
           />
-          <button
-            onClick={startProcessing}
+          <Button
+            variant="default"
+            size="lg"
             disabled={isProcessing}
-            className="bg-primary text-primary-foreground rounded-[10px] h-12 w-full text-sm font-medium hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+            onClick={startProcessing}
           >
             Restore Photo
-          </button>
+          </Button>
         </div>
       ) : (
         <UploadZone onFileSelect={selectFile} disabled={isProcessing} />

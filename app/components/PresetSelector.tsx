@@ -29,17 +29,17 @@ export function PresetSelector({ value, onChange, disabled }: PresetSelectorProp
             onClick={() => onChange(option.value)}
             disabled={disabled}
             className={`
-              border-2 rounded-xl p-4 flex gap-4 items-center text-left transition-colors
+              border-2 border-primary rounded-sm p-4 flex gap-4 items-center text-left transition-colors 
               ${disabled ? "opacity-50 cursor-not-allowed" : "cursor-pointer"}
-              ${isSelected ? "border-primary bg-primary/5" : "border-border"}
+              ${isSelected ? "bg-primary/5" : " border-primary/50"}
             `}
           >
-            <div className="bg-[#3a3a3a] rounded-xl size-12 flex items-center justify-center shrink-0">
-              {Icon && <Icon className="size-5 text-foreground" />}
+            <div className={`rounded-xl size-12 flex items-center border border-primary justify-center shrink-0  ${isSelected ? "bg-primary" : "bg-transparent"}`}>
+              {Icon && <Icon className={`size-5 ${isSelected ? "text-background" : "text-primary"}`} />}
             </div>
             <div>
-              <div className="text-sm font-semibold text-foreground">{option.label}</div>
-              <div className="text-sm font-medium text-muted-foreground">{option.description}</div>
+              <div className={`text-sm ${isSelected ? "font-bold" : "text-medium"} font-arvo`}>{option.label}</div>
+              <div className="text-sm font-medium">{option.description}</div>
             </div>
           </button>
         );
