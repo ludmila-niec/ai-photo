@@ -63,7 +63,7 @@ export function ProcessingSpinner({ preset, exiting }: ProcessingSpinnerProps) {
       <div className="relative">
         {/* Sparkles animation */}
         <div className=" flex items-center justify-center relative mb-20">
-          <Sparkles className="size-15 text-primary/80 absolute -top-18 sparkle-shoot animation-delay-600 opacity-0" />
+          <Sparkles className="size-12 text-primary/80 absolute -top-18 sparkle-shoot animation-delay-600 opacity-0" />
           <Sparkles className="size-8 text-primary/80 absolute top-0 left-2 sparkle-shoot animation-delay-1200 opacity-0" />
           <Sparkles className="size-5 text-primary/80 absolute top-0 right-4 sparkle-shoot opacity-0" />
         </div>

@@ -17,11 +17,11 @@ export function Navbar() {
     <>
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background border-b border-primary">
         <div className="mx-auto max-w-lg px-4 h-14 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2.5">
+          <Link href="/" className="flex items-center gap-2">
             <div className="size-8 rounded-lg flex items-center justify-center">
-              <Sparkles className="size-4 text-primary" />
+              <Sparkles className="size-6 text-primary" />
             </div>
-            <span className="text-xl font-semibold text-foreground">
+            <span className="text-lg font-medium text-foreground font-arvo">
               RevAIve
             </span>
           </Link>
@@ -31,7 +31,7 @@ export function Navbar() {
             className="flex items-center gap-1.5 text-foreground hover:text-muted-foreground transition-colors cursor-pointer"
           >
             <CircleHelp className="size-4" />
-            <span className="text-sm font-medium">Tips</span>
+            <span className="text-sm font-medium font-arvo">Tips</span>
           </button>
         </div>
       </nav>
