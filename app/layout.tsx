@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Cutive_Mono, Arvo } from "next/font/google";
+import { Cutive_Mono, Arvo } from "next/font/google";
+import { Toaster } from "@/components/ui/sonner"
 import "./globals.css";
 
 const cutiveMono = Cutive_Mono({
@@ -51,6 +52,7 @@ export default function RootLayout({
       <body className={`${cutiveMono.variable} ${arvo.variable} font-[family-name:var(--font-cutive-mono)] font-[family-name:var(--font-arvo)] antialiased before:content-[''] before:fixed before:inset-0 before:w-full before:h-full before:bg-[#8C8C8C] before:opacity-30 before:filter-[url(#noiseFilter)]`}>
         <NoiseTexture />
         {children}
+        <Toaster />
       </body>
     </html>
   );
