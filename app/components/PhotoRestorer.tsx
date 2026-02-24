@@ -242,8 +242,8 @@ export function PhotoRestorer() {
       )}
       <h2 className="text-[20px] font-[family-name:var(--font-arvo)] font-bold text-foreground text-center mt-12">Check this example</h2>
       <CompareView
-        originalUrl="/example-original.png"
-        restoredUrl="/example-restored.png"
+        originalUrl="/example-original.webp"
+        restoredUrl="/example-restored.webp"
       />
     </div>
   );

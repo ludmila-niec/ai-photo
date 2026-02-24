@@ -37,52 +37,54 @@ export function CompareView({ originalUrl, restoredUrl }: CompareViewProps) {
   }, []);
 
   return (
-    <div className="border-extract p-4">
-      <div
-        ref={containerRef}
-        className="relative w-full rounded-sm overflow-hidden select-none touch-pan-y cursor-ew-resize"
-        onPointerDown={onPointerDown}
-        onPointerMove={onPointerMove}
-        onPointerUp={onPointerUp}
-        onPointerCancel={onPointerUp}
-      >
-        {/* Restored image — visible on right, drives container aspect ratio */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={restoredUrl}
-          alt="Restored photo"
-          className="block w-full h-auto"
-          draggable={false}
-        />
-
-        {/* Original image — clipped to left portion */}
+    <div className="min-h-[400px]">
+      <div className="border-extract p-4">
         <div
-          className="absolute inset-0"
-          style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
+          ref={containerRef}
+          className="relative w-full rounded-sm overflow-hidden select-none touch-pan-y cursor-ew-resize"
+          onPointerDown={onPointerDown}
+          onPointerMove={onPointerMove}
+          onPointerUp={onPointerUp}
+          onPointerCancel={onPointerUp}
         >
+          {/* Restored image — visible on right, drives container aspect ratio */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={originalUrl}
-            alt="Original photo"
-            className="absolute inset-0 w-full h-full object-cover"
+            src={restoredUrl}
+            alt="Restored photo"
+            className="block w-full h-auto"
             draggable={false}
           />
-        </div>
 
-        {/* Slider line + handle */}
-        <div
-          className="absolute top-0 bottom-0 flex items-center pointer-events-none"
-          style={{ left: `${position}%`, transform: "translateX(-50%)" }}
-        >
-          {/* Vertical line */}
-          <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-[2px] bg-primary" />
+          {/* Original image — clipped to left portion */}
+          <div
+            className="absolute inset-0"
+            style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={originalUrl}
+              alt="Original photo"
+              className="absolute inset-0 w-full h-full object-cover"
+              draggable={false}
+            />
+          </div>
 
-          {/* Circular handle */}
-          <div className="relative w-10 h-10 bg-background border border-primary rounded-full flex items-center justify-center shadow-lg">
-            <div className="flex gap-[2px] items-center">
-              <div className="w-[2px] h-[10px] bg-black rounded-full" />
-              <div className="w-[2px] h-[16px] bg-black rounded-full" />
-              <div className="w-[2px] h-[10px] bg-black rounded-full" />
+          {/* Slider line + handle */}
+          <div
+            className="absolute top-0 bottom-0 flex items-center pointer-events-none"
+            style={{ left: `${position}%`, transform: "translateX(-50%)" }}
+          >
+            {/* Vertical line */}
+            <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-[2px] bg-primary" />
+
+            {/* Circular handle */}
+            <div className="relative w-10 h-10 bg-background border border-primary rounded-full flex items-center justify-center shadow-lg">
+              <div className="flex gap-[2px] items-center">
+                <div className="w-[2px] h-[10px] bg-black rounded-full" />
+                <div className="w-[2px] h-[16px] bg-black rounded-full" />
+                <div className="w-[2px] h-[10px] bg-black rounded-full" />
+              </div>
             </div>
           </div>
         </div>
