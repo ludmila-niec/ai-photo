@@ -136,24 +136,26 @@ export function PhotoRestorer() {
     return (
       <div className="space-y-6">
         <div className="flex flex-col items-center gap-2">
-          <div className="size-16 rounded-full bg-[rgba(0,201,80,0.1)] flex items-center justify-center">
-            <CircleCheck className="size-8 text-[#00C950]" />
+          <div className="size-16 rounded-full border border-primary flex items-center justify-center check-animation">
+            <CircleCheck className="size-8 text-primary check-animation animation-delay-600" />
           </div>
-          <h2 className="text-xl font-bold text-foreground">Restoration Complete!</h2>
-          <p className="text-sm text-muted-foreground">Your photo has been restored successfully</p>
+          <h2 className="text-xl font-bold text-foreground font-arvo">Restoration Complete!</h2>
+          <p className="text-md ">Your photo has been restored successfully</p>
         </div>
         <CompareView originalUrl={state.originalUrl} restoredUrl={state.restoredUrl} />
-        <div className="flex gap-3">
+        <div className="flex gap-3 relative z-10">
           <DownloadButton dataUrl={state.restoredUrl} className="flex-1" />
           <ShareButton dataUrl={state.restoredUrl} />
         </div>
-        <button
+        <Button
           onClick={reset}
-          className="w-full h-12 flex items-center justify-center gap-2 text-foreground rounded-[42px] font-medium hover:bg-muted transition-colors cursor-pointer"
+          size="lg"
+          variant="outline"
+          className="w-full relative z-10"
         >
           <RotateCcw className="size-4" />
           Restore Another Photo
-        </button>
+        </Button>
       </div>
     );
   }
@@ -162,22 +164,23 @@ export function PhotoRestorer() {
     return (
       <div className="fixed inset-0 flex items-center justify-center px-4">
         <div className="space-y-6 w-full max-w-lg">
-          <div className="flex flex-col items-center gap-2">
-            <div className="size-16 rounded-full bg-destructive/10 flex items-center justify-center">
-              <CircleX className="size-8 text-destructive" />
+          <div className="flex flex-col items-center gap-4">
+            <div className="size-16 rounded-full border border-primary flex items-center justify-center check-animation ">
+              <CircleX className="size-8 text-primary opacity-0 check-animation animation-delay-600" />
             </div>
-            <h2 className="text-xl font-bold text-foreground">Something Went Wrong</h2>
-            <p className="text-sm text-muted-foreground text-center">
+            <h2 className="text-xl font-bold  font-arvo">Something Went Wrong</h2>
+            <p className="text-md text-center">
               {state.errorMessage || "An error occurred"}
             </p>
           </div>
 
-          <button
+          <Button
             onClick={reset}
-            className="bg-primary text-primary-foreground rounded-[10px] h-12 w-full text-sm font-medium hover:bg-primary/90 transition-colors cursor-pointer"
+            size="lg"
+            className="w-full"
           >
             Try Again
-          </button>
+          </Button>
         </div>
       </div>
     );

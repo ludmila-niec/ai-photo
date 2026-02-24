@@ -197,6 +197,19 @@
   }
 }
 
+
+@keyframes check-animation {
+  0% {
+    opacity: 0;
+    transform: scale(0.90);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .border-dashed-translation {
   background-image:
     repeating-linear-gradient(90deg, var(--primary) 0, var(--primary) 2px, transparent 2px, transparent 4px),
@@ -238,7 +251,13 @@
   animation-iteration-count: infinite;
 }
 
-
+.check-animation {
+  animation-name: check-animation;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
 
 @layer base {
   * {

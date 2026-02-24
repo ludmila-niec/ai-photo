@@ -95,7 +95,7 @@ export function Navbar() {
 
 
           {/* Rights notice */}
-          <div className="border-extract p-8">
+          <div className="border-extract p-6">
             <p className="text-sm">
               <span className="font-bold font-arvo block mb-2">Important: </span>
               <span className="text-sm">

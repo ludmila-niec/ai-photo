@@ -2,6 +2,7 @@
 
 import { Download } from "lucide-react";
 import type { DownloadButtonProps } from "@/lib/types";
+import { Button } from "@/components/ui/button";
 
 export function DownloadButton({ dataUrl, filename, className }: DownloadButtonProps) {
   const handleDownload = () => {
@@ -14,12 +15,14 @@ export function DownloadButton({ dataUrl, filename, className }: DownloadButtonP
   };
 
   return (
-    <button
+    <Button
       onClick={handleDownload}
-      className={`bg-primary text-primary-foreground rounded-[42px] h-12 flex items-center justify-center gap-2 font-medium hover:bg-primary/90 transition-colors cursor-pointer ${className || ""}`}
+      size="lg"
+      variant="default"
+      className={`w-full ${className || ""}`}
     >
       <Download className="size-5" />
       Download
-    </button>
+    </Button>
   );
 }

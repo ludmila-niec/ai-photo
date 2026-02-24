@@ -3,6 +3,7 @@
 import { useCallback } from "react";
 import { Share2 } from "lucide-react";
 import type { ShareButtonProps } from "@/lib/types";
+import { Button } from "@/components/ui/button";
 
 function dataUrlToBlob(dataUrl: string): Blob {
   const [header, base64] = dataUrl.split(",");
@@ -54,12 +55,14 @@ export function ShareButton({ dataUrl }: ShareButtonProps) {
   }, [dataUrl]);
 
   return (
-    <button
+    <Button
       onClick={handleShare}
-      className="size-12 flex items-center justify-center rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors cursor-pointer shrink-0"
+      size="icon-lg"
+      variant="outline"
       aria-label="Share restored photo"
+      className="rounded-full "
     >
       <Share2 className="size-5" />
-    </button>
+    </Button>
   );
 }
