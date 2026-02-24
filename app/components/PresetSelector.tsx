@@ -31,7 +31,7 @@ export function PresetSelector({ value, onChange, disabled }: PresetSelectorProp
             className={`
               border-2 border-primary rounded-sm p-4 flex gap-4 items-center text-left transition-colors 
               ${disabled ? "opacity-50 cursor-not-allowed" : "cursor-pointer"}
-              ${isSelected ? "bg-primary/5" : " border-primary/50"}
+              ${isSelected ? "bg-primary/5" : " border-primary/50 hover:bg-primary/5"}
             `}
           >
             <div className={`rounded-xl size-12 flex items-center border border-primary justify-center shrink-0  ${isSelected ? "bg-primary" : "bg-transparent"}`}>

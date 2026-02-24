@@ -57,8 +57,8 @@ export function ProcessingSpinner({ preset, exiting }: ProcessingSpinnerProps) {
 
   return (
     <div className={`flex flex-col items-center justify-center py-12 px-4 space-y-6 ${exiting
-      ? 'animate-[spinnerFadeOut_0.4s_ease_0.5s_forwards]'
-      : 'animate-[spinnerFadeIn_0.5s_ease_both]'
+      ? 'animation-fade-out'
+      : 'animation-fade-in'
       }`}>
       <div className="relative">
         {/* Sparkles animation */}

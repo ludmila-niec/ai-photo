@@ -134,7 +134,7 @@ export function PhotoRestorer() {
 
   if (state.status === "success" && state.originalUrl && state.restoredUrl) {
     return (
-      <div className="space-y-6">
+      <div className="space-y-6 animation-fade-in">
         <div className="flex flex-col items-center gap-2">
           <div className="size-16 rounded-full border border-primary flex items-center justify-center check-animation">
             <CircleCheck className="size-8 text-primary check-animation animation-delay-600" />
@@ -205,13 +205,13 @@ export function PhotoRestorer() {
         </p>
       </div>
       {state.selectedFile && state.originalUrl ? (
-        <div className="border border-dashed border-border rounded-2xl p-[25px] flex flex-col gap-6 z-10 relative">
+        <div className="border border-dashed border-border rounded-sm p-[25px] flex flex-col gap-6 z-10 relative animation-fade-in">
           <Image
             src={state.originalUrl}
             alt="Selected photo"
             width={state.imageWidth || 800}
             height={state.imageHeight || 600}
-            className="w-full h-auto rounded-xl"
+            className="w-full h-auto rounded-sm"
             unoptimized
           />
           <Button

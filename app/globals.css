@@ -173,7 +173,7 @@
   }
 }
 
-@keyframes spinnerFadeIn {
+@keyframes animationFadeIn {
   from {
     opacity: 0;
     transform: scale(0.95);
@@ -185,7 +185,7 @@
   }
 }
 
-@keyframes spinnerFadeOut {
+@keyframes animationFadeOut {
   from {
     opacity: 1;
     transform: scale(1);
@@ -257,6 +257,24 @@
   animation-timing-function: linear;
   animation-iteration-count: 1;
   animation-fill-mode: both;
+}
+
+.animation-fade-in {
+  animation-name: animationFadeIn;
+  animation-duration: 0.4s;
+  animation-timing-function: ease;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+  animation-delay: 0.1s;
+}
+
+.animation-fade-out {
+  animation-name: animationFadeOut;
+  animation-duration: 0.4s;
+  animation-timing-function: ease;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+  animation-delay: 0.1s;
 }
 
 @layer base {
